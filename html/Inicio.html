@@ -21,8 +21,14 @@
 
         <div class="buscador">
             <h2>Buscar peliculas:</h2>
-            <input type="search " name="txtBuscar" id="txtBuscar">
-            <button class="btn btn-primary" onclick="mostrarPelicula()">Buscar</button>
+            <div>
+                <input onkeyup="autocompletado()" type="search" name="txtBuscar" id="txtBuscar">
+                <div class="caja-resultados">
+                    <ul id="resultados">
+                    </ul>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="buscar()">Buscar</button>
         </div>
 
         <div class="logo-carrito">
@@ -50,11 +56,13 @@
     </section>
     <!-- Cartelera -->
     <div class="contenedor" id="listaPeliculas">
-
+        
         <!-- <div class="pelicula">
             <div class="cartelera">
-                <img src="img/Cartelera.jpg" alt="#">
-            </div>
+                    <a href="">
+                        <img src="/img/Cartelera.jpg" alt="#">
+                    </a>
+                </div>
             <div class="descripcion-pelicula">
                 <div class="nombre-pelicula" id="nombre-pelicula">
                     <h1>Pelicula</h1>
@@ -63,20 +71,18 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, dolorem culpa. Iure a vitae
                         quod ut enim, officia dolore tenetur distinctio rem ipsum inventore cum nesciunt repellendus
                         provident blanditiis odio.
-                        Iusto deserunt suscipit, eligendi sequi fugit temporibus magnam qui non deleniti tempore nulla
-                        provident cupiditate quos distinctio natus earum tenetur error reprehenderit nihil debitis
-                        laboriosam? Ut eaque dicta nisi repudiandae.</p>
+                        </p>
                 </div>
-                <div class="precio-pelicula" id="precio">
-                    <p>Total</p>
-                    <p>$2000</p>
-                    <button>
-                        comprar
-                    </button>
+                <div class="info" id="precio">
+                    <p>Año</p>
+                    <p>Tipo</p>
+                    <a href="">
+                        <img src="/img/icons8-me-gusta-48.png" alt="">
+                    </a>
+                    </div>
                 </div>
-            </div>
-        </div> -->
+            </div> -->
     </div>
 </body>
 <script src="/js/pelicula.js"></script>
-</html>
+</html> 
