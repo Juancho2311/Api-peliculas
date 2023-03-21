@@ -12,15 +12,20 @@
 <body>
     <!-- arriba -->
     <header>
-        <div class="logo-carrito">
+
+        <div>
             <!-- off-canvas -->
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <ul id="favoritos">
+
+                </ul>
             </div>
             <div id="main">
-                <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; open</span>
+                <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav(), imprimir()">&#9776; open</span>
+
             </div>
-            
+
         </div>
 
         <div class="logo-titulo">
@@ -39,7 +44,7 @@
                 </div>
             </div>
             <div class="container">
-                <div class="btn" onclick="buscar()"><a href="#">Buscar</a></div>    
+                <div class="btn" onclick="buscar()"><a href="#">Buscar</a></div>
             </div>
 
             <!-- <button class="btn btn-primary" onclick="buscar()">Buscar</button> -->

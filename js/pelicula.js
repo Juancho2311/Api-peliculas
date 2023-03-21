@@ -26,7 +26,7 @@ function buscar() {
         let poster = element.Poster;
         let resumen = element.Plot;
         let codigo = element.imdbID;
-        console.log(codigo)
+        console.log(codigo);
         listasPeliculas += `
                 <div class="pelicula">
                     <div class="cartelera">
@@ -42,7 +42,9 @@ function buscar() {
                                     <p>${año}</p>
                                     <p>${tipo}</p>
                                     <div class="button">
-                                        <input type="checkbox" id="liked"><label for="liked"><span></span></label>
+                                    <a onclick="favoritos('${codigo}')" >
+                                    <img style="height: 20px; width: 20px;" src="/img/icons8-me-gusta-48.png" alt="">
+                                    </a>
                                     </div>
                             </div>
                         </div>
@@ -55,8 +57,7 @@ function buscar() {
 }
 
 function nombrepelicula(codigo) {
-  localStorage.setItem("codigo", codigo)
-  
+  localStorage.setItem("codigo", codigo);
 }
 
 function autocompletado() {
@@ -109,4 +110,48 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
   document.body.style.backgroundColor = "";
+}
+
+// lista-favoritos
+
+fav = [];
+function favoritos(id) {
+  fav.push(id);
+  console.log(fav)
+}
+
+//imprimir datos
+function imprimir() {
+  favos = "";
+  let favo = fav;
+  favo.forEach((element) => {
+    let url = `http://www.omdbapi.com/?i=${element}&apikey=a0f6ccb`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        favos += `
+          <div class="card mx-3  my-3" style="width: 18rem;">
+            <a onclick="local('${data.imdbID}')" href="otro.html">
+            <img src="${data.Poster}" class="card-img-top" alt="...">
+          </a>
+            <div class="card-body">
+              <h5 class="card-title">${data.Title}</h5>
+              <p class="card-text">año: ${data.Year}</p>
+
+            </div>
+            <a onclick="eliminar('${data.imdbID}')" class="btn btn-primary">eliminar</a>
+          </div>`;
+          console.log(favos)
+        document.getElementById("favoritos").innerHTML = favos;
+      });
+  });
+}
+
+function eliminar(id) {
+  console.log(id);
+  if (fav.includes(id)) {
+    let salir = fav.indexOf(`${id}`);
+    fav.splice(salir, 1);
+    imprimir();
+  }
 }
