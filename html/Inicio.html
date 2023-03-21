@@ -12,7 +12,17 @@
 <body>
     <!-- arriba -->
     <header>
-        
+        <div class="logo-carrito">
+            <!-- off-canvas -->
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </div>
+            <div id="main">
+                <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; open</span>
+            </div>
+            
+        </div>
+
         <div class="logo-titulo">
             <a href="Inicio.html">
                 <h1>Pelis.JD</h1>
@@ -28,16 +38,16 @@
                     </ul>
                 </div>
             </div>
-            <button class="btn btn-primary" onclick="buscar()">Buscar</button>
+            <div class="container">
+                <div class="btn" onclick="buscar()"><a href="#">Buscar</a></div>    
+            </div>
+
+            <!-- <button class="btn btn-primary" onclick="buscar()">Buscar</button> -->
         </div>
 
-        <div class="logo-carrito">
-            <a href="#">
-                <img src="/img/carrito-de-compras.png" alt="...">
-            </a>
-        </div>
 
     </header>
+    <!-- menu -->
     <section>
         <!-- menu -->
         <div class="categoria">
@@ -56,7 +66,7 @@
     </section>
     <!-- Cartelera -->
     <div class="contenedor" id="listaPeliculas">
-        
+
         <!-- <div class="pelicula">
             <div class="cartelera">
                     <a href="">
@@ -85,4 +95,5 @@
     </div>
 </body>
 <script src="/js/pelicula.js"></script>
-</html> 
+
+</html>

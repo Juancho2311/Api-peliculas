@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    background-color: #123d90;
+}
+
+header .logo-titulo a, h1 {
+    margin-top: 0%;
+    font-size: 70px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+/* carteleras  */
+
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -31px;
+}
+
+.contenedor .pelicula{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    height: 850px;
+    background-color:  black;
+    margin-top: 20px;
+}
+
+.contenedor .pelicula .cartelera{
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+.contenedor .pelicula .cartelera img{
+    height: 400px;
+    width: 300px;
+    margin-left: 50px;
+}
+
+.contenedor .pelicula .descripcion-pelicula{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 90%;
+    margin-left: 40px;
+    color: white;
+}
+.contenedor .pelicula .descripcion-pelicula .nombre-pelicula{
+    margin-top: 20px;
+}
+
+.contenedor .pelicula .descripcion-pelicula .descripcion{
+
+    margin-top: -20px;
+}
+
+
+.contenedor .pelicula .descripcion-pelicula .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 600px;
+    font-size: 20px;
+    
+}
+
